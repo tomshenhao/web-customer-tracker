@@ -28,8 +28,6 @@ public class CustomerController {
 		//get customers from the dao
 		List<Customer> theCustomers=customerService.getCustomers();
 		
-		//System.out.println("in controller"+theCustomers);
-		
 		//add customer to the model
 		theModel.addAttribute("customers", theCustomers);
 		
@@ -67,5 +65,14 @@ public class CustomerController {
 		
 		//send over to our form
 		return "customer-form";
+	}
+
+	@GetMapping("/delete")
+	public String delete(@RequestParam("customerId") int theId) {
+		
+		//delete the customer
+		customerService.deleteCustomer(theId);
+		
+		return "redirect:/customer/list";
 	}
 }

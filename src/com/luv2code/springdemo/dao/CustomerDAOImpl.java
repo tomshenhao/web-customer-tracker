@@ -29,8 +29,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 		//execute query and get result list
 		List<Customer> customers=theQuery.getResultList();
 		
-		//System.out.println("in DAO: "+customers);
-		
 		//return the results
 		return customers;
 		
@@ -55,6 +53,17 @@ public class CustomerDAOImpl implements CustomerDAO {
 		
 		return theCustomer;
 	
+	}
+
+	@Override
+	public void deleteCustomer(int theId) {
+		
+		Session session=factory.getCurrentSession();
+		
+		Customer tempCustomer=session.get(Customer.class, theId);
+		
+		session.delete(tempCustomer);
+		
 	}
 
 }
