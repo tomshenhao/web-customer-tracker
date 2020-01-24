@@ -30,7 +30,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 		//execute query and get result list
 		List<Customer> customers=theQuery.getResultList();
 		
-		System.out.println("in DAO: "+customers);
+		//System.out.println("in DAO: "+customers);
 		
 		//return the results
 		return customers;

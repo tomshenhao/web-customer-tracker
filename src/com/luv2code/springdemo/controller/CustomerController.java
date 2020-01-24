@@ -24,7 +24,7 @@ public class CustomerController {
 		//get customers from the dao
 		List<Customer> theCustomers=customerDAO.getCustomers();
 		
-		System.out.println("in controller"+theCustomers);
+		//System.out.println("in controller"+theCustomers);
 		
 		//add customer to the model
 		theModel.addAttribute("customers", theCustomers);
